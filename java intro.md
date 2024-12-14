@@ -335,3 +335,45 @@ These are the most basic types. They are used to store simple values like number
   ```java
   int distance = 100000;
 - Use: The most common data type for whole numbers.
+
+### d) long
+- **What is it?** A big number.
+- **Size:** Takes up 8 bytes.
+- **Example:**
+  ```java
+  long population = 7800000000L;
+- Use: Used when numbers are too large to fit in an int.
+
+### e) float
+- **What is it?** A number with decimals (but not super precise).
+- **Size:** Takes up 4 bytes.
+- **Example:**
+  ```java
+  float price = 9.99f;
+- Use: Used for decimal numbers when you don’t need a lot of precision.
+
+### f) double
+- **What is it?** A more precise decimal number.
+- **Size:** Takes up 8 bytes.
+- **Example:**
+  ```java
+  double salary = 1500.75;
+- Use: The default data type for decimal numbers in Java.
+
+### g) char
+- **What is it?** A single character.
+- **Size:** Takes up 2 bytes.
+- **Example:**
+  ```java
+  char grade = 'A';
+- Use: Used to store a single character, like a letter or number.
+
+### h) boolean
+- **What is it?** A true/false value.
+- **Size:** Takes up 1 byte.
+- **Example:**
+  ```java
+  boolean isAdult = true;
+- Use: Used to represent a decision, yes/no, or true/false situation.
+
+
