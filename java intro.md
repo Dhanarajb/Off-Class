@@ -285,3 +285,53 @@ Let’s say you want to create a simple **Java-based Calculator** app:
 - **JDK = Full toolbox for Java development** (including compiler and JVM).
 - **JRE = Environment for running Java programs** (includes JVM).
 - **JVM = The engine that runs the Java program** (translates bytecode into machine code).
+
+
+
+# Understanding Data Types in Java
+
+### What are Data Types?
+
+In programming, **data types** are used to specify the kind of data that a variable can store. Think of them as labels that tell the computer what kind of information a variable holds, like a number, a character, or a true/false value.
+
+For example, when you declare a variable in Java, you also have to tell it what kind of value it should hold. The data type is like the "category" of data for that variable.
+
+---
+
+### Two Main Categories of Data Types in Java
+
+Java has two broad categories of data types:
+1. **Primitive Data Types**  
+2. **Reference Data Types**
+
+---
+
+## 1. Primitive Data Types
+
+These are the most basic types. They are used to store simple values like numbers or text (characters). There are 8 types of primitive data types in Java:
+
+### a) byte
+- **What is it?** A tiny number that can range from -128 to 127.
+- **Size:** It takes up only 1 byte of memory.
+- **Example:** 
+  ```java
+  byte age = 25;
+- Use: It’s used when you need to store very small numbers and save memory.
+
+### b) short
+
+- **What is it?** A small number.
+- **Size:** Takes up 2 bytes of memory.
+- **Example:**
+  ```java
+  short temperature = -5;
+- Use: Useful for small numbers, and when memory is a concern.
+
+### c) int
+
+- **What is it?** A regular number (integer).
+- **Size:** Takes up 4 bytes.
+- **Example:**
+  ```java
+  int distance = 100000;
+- Use: The most common data type for whole numbers.
