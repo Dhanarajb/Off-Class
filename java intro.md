@@ -204,4 +204,18 @@ This shows the power of Java's platform independence, where the same bytecode wo
 1. The JVM handles the execution of the program. 
 2. For example, it translates `System.out.println("Hello, World!");` into machine code that instructs the computer to display the message on the screen.
 
+# Summary of the Process:
+
+### Compilation:
+- Java source code → Bytecode (using `javac HelloWorld.java`).
+
+### Execution:
+- Bytecode → JVM → Machine Code (using `java HelloWorld`).
+
+### JVM:
+- Handles the translation and execution of the bytecode, memory management, and garbage collection.
+
+This entire process is what makes Java platform-independent. The "write once, run anywhere" philosophy means that once the Java program is compiled into bytecode, it can run on any system with a JVM, regardless of the operating system or hardware.
+
+<img width="167" alt="Screenshot 2024-12-14 at 12 43 18 PM" src="https://github.com/user-attachments/assets/8fa77e2e-e047-41f0-b1c5-9f5aa62fc75b" />
 
