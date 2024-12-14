@@ -109,3 +109,20 @@ You should choose Java when:
 - **How it's used**: Java is used in high-speed trading platforms and large multiplayer online games because it can handle large amounts of data and transactions quickly and securely.
 
 ---
+# How Java Works: From Source Code to Execution
+
+Java works in a unique way that allows it to run on any device, anywhere. Let’s break down the process of how Java code is compiled, converted into bytecode, and executed by the Java Virtual Machine (JVM), using a simple "Hello World" program as an example.
+
+---
+
+## 1. **Writing the Java Code (Source Code)**
+
+First, a Java programmer writes the source code, which is a simple text file. For example, here's a simple "Hello World" Java program:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
