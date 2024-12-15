@@ -491,14 +491,14 @@ String name = "John"; // Correct: name is a string
 ### Two Main Categories of Data Types in Java
 
 Java has two broad categories of data types:
-1. **Primitive Data Types**  
-2. **Reference Data Types**
+1. **Primitive Data Types**  : These store simple values like numbers or a single character.
+2. **Reference Data Types** : These store complex data like objects or arrays.
 
 ---
 
 ## 1. Primitive Data Types
 
-These are the most basic types. They are used to store simple values like numbers or text (characters). There are 8 types of primitive data types in Java:
+Primitive data types are the most basic building blocks for storing data. Java has 8 types of primitive data types. Let’s look at each one with examples.
 
 ### a) byte
 - **What is it?** A tiny number that can range from -128 to 127.
@@ -510,7 +510,7 @@ These are the most basic types. They are used to store simple values like number
 
 ### b) short
 
-- **What is it?** A small number.
+- **What is it?**  A slightly larger number, ranging from -32,768 to 32,767.
 - **Size:** Takes up 2 bytes of memory.
 - **Example:**
   ```java
@@ -519,12 +519,12 @@ These are the most basic types. They are used to store simple values like number
 
 ### c) int
 
-- **What is it?** A regular number (integer).
-- **Size:** Takes up 4 bytes.
+- **What is it?** A common number type for whole numbers.
+- **Size:** 4 bytes (32 bits).
 - **Example:**
   ```java
   int distance = 100000;
-- Use: The most common data type for whole numbers.
+- Use: Most commonly used for numbers that don’t have decimals.
 
 ### d) long
 - **What is it?** A big number.
@@ -559,7 +559,7 @@ These are the most basic types. They are used to store simple values like number
 - Use: Used to store a single character, like a letter or number.
 
 ### h) boolean
-- **What is it?** A true/false value.
+- **What is it?** A value that can only be true or false.
 - **Size:** Takes up 1 byte.
 - **Example:**
   ```java
@@ -568,7 +568,7 @@ These are the most basic types. They are used to store simple values like number
 
 
 ### 2. Reference Data Types
-Reference data types are more complex and store references to data rather than the actual data itself. They are used to store things like objects (things that are created from classes), and arrays (lists of items).
+Reference data types are used to store complex data structures. Instead of holding actual data, they store the address (or reference) to the memory location where the data is stored.
 
 #### a) String
 - **What is it?** A sequence of characters, like words or sentences.
