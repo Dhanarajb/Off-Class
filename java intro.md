@@ -623,4 +623,42 @@ This simple example shows how different types of data are stored and used in the
 - **Data types** help us save memory, prevent errors, and make our programs run efficiently.
 - By understanding data types, we can write better and more efficient code!
 
+-------------
 
+# Operators and Expressions in Java
+
+## What Are Operators?
+
+In programming, **operators** are symbols or words that perform operations on variables and values. They are used to manipulate data and variables in your program. Think of them as tools that help you do calculations, compare values, or even change the values of variables.
+
+---
+
+## Types of Operators in Java
+
+Java has several types of operators that you will frequently use. Here’s an easy-to-understand breakdown:
+
+### 1. Arithmetic Operators
+
+These are the most basic operators that deal with mathematical operations like addition, subtraction, multiplication, etc.
+
+- **Addition (`+`)**: Adds two values together.
+
+```java
+int sum = 10 + 5;  // sum = 15
+```
+- **Subtraction (`-`)**: Subtracts one value from another.
+```java
+int sub = 10 - 5;  // sub = 5
+```
+- **Multiplication (`*`)**: Multiplies two values.
+```java
+int mult = 10 * 5;  // mult = 50
+```
+- **Division (`/`)**: Divides one value by another.
+```java
+int div = 10 / 5;  // div = 2
+```
+- **Modulus (`%`)**: Gives the remainder of a division.
+```java
+int rem = 10 % 3;  // rem = 1
+```
