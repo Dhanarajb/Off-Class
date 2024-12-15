@@ -662,3 +662,181 @@ int div = 10 / 5;  // div = 2
 ```java
 int rem = 10 % 3;  // rem = 1
 ```
+
+
+### 2. Relational (Comparison) Operators
+
+These operators compare two values and return a boolean result (`true` or `false`).
+
+- **Equal to (`==`)**: Checks if two values are the same.
+
+```java
+boolean result = 5 == 5;  // result will be true
+```
+- **Not equal to (`!=`)**: Checks if two values are different.
+```java
+boolean result = 5 != 3;
+```
+- **Greater than (`>`)**: Checks if one value is greater than the other.
+```java
+boolean result = 5 > 3;  // result will be true
+```
+- **Less than (`<`)**: Checks if one value is less than the other.
+```java
+boolean result = 5 < 10;  // result will be true
+```
+- **Greater than or equal to (`>=`)**: Checks if one value is greater than or equal to the other.
+```java
+boolean result = 5 >= 5;  // result will be true
+```
+- **Less than or equal to (`<=`)**: Checks if one value is less than or equal to the other.
+```java
+boolean result = 3 <= 4;  // result will be true
+```
+### 3. Logical Operators
+
+Logical operators are used to combine multiple conditions and return a `true` or `false` result.
+
+- **AND (`&&`)**: Returns `true` if both conditions are true.
+
+```java
+boolean result = (5 > 3) && (10 > 5);  // result will be true because both conditions are true
+```
+- **OR (`||`)**: Returns true if at least one condition is true.
+```java
+boolean result = (5 < 3) || (10 > 5);  // result will be true
+```
+- **NOT (`!`)**: Reverses the boolean value. If it’s true, it becomes false, and if it’s false, it becomes true.
+```java
+boolean result = !(5 < 3);  // result will be true because 5 is not less than 3
+```
+
+### 4. Assignment Operators
+
+Assignment operators are used to assign values to variables.
+
+- **Equal (`=`)**: Assigns a value to a variable.
+
+```java
+int x = 5;  // Assigns the value 5 to the variable x
+```
+- **Add and assign (`+=`)**: Adds a value to a variable and assigns the result back to the variable.
+```java
+x += 3;  // Equivalent to x = x + 3; Now x will be 8
+```
+- **Subtract and assign (`-=`)**: Subtracts a value from a variable and assigns the result back.
+```java
+x -= 2;  // Equivalent to x = x - 2; Now x will be 6
+```
+- **Multiply and assign (`*=`)**: Multiplies a variable by a value and assigns the result back.
+```java
+x *= 2;  // Equivalent to x = x * 2; Now x will be 12
+```
+- **Divide and assign (`/=`)**: Divides a variable by a value and assigns the result back.
+```java
+x /= 3;  // Equivalent to x = x / 3; Now x will be 4
+```
+
+### 5. Unary Operators
+
+Unary operators operate on a single variable.
+
+- **Increment (`++`)**: Increases the value of a variable by 1.
+
+```java
+int x = 5;
+x++;  // x is now 6
+```
+- **Decrement (`--`)**: Decreases the value of a variable by 1.
+```java
+int count = 5;
+count--;  // count will be 4
+```
+### 6. Ternary Operator
+
+The ternary operator is a shortcut for `if-else` statements. It allows you to write a simple condition check in one line, with three parts: 
+
+- A **condition**
+- A **result if the condition is true**
+- A **result if the condition is false**
+
+The syntax is:
+
+```java
+int age = 20;
+String result = (age >= 18) ? "Adult" : "Minor";  // result will be "Adult"
+
+```
+### What Are Expressions?
+
+An expression is a combination of variables, constants, operators, and functions that are evaluated to produce a value. Expressions are used in Java to perform operations within statements, such as performing calculations or making comparisons.
+
+In simple terms, an expression is something that the program evaluates to give you a result.
+
+#### Examples of Expressions:
+
+1. **Simple Arithmetic Expression:**
+
+```java
+int sum = 5 + 3;  // The expression 5 + 3 is evaluated, and the result (8) is assigned to the variable sum
+```
+
+2. **Relational Expression:**
+```java
+boolean isGreater = (5 > 3);  // isGreater will be true
+```
+
+3. **Logical Expression:**
+```java
+boolean result = (5 > 3) && (10 < 20);  // result will be true
+```
+4. **Ternary Expression:**
+```java
+String message = (10 > 5) ? "Greater" : "Smaller";  // message will be "Greater"
+```
+
+### How Do Operators and Expressions Work Together?
+
+Operators and expressions work hand-in-hand to perform operations and return results. Operators modify the data, while expressions group the operators and values together to form a complete operation.
+
+In Java, an **expression** can consist of values, variables, operators, and function calls. The **operators** act on the values and variables within the expression to calculate the final result.
+
+#### Example:
+
+```java
+int x = (5 + 3) * 2;
+```
+- Here, (5 + 3) is an expression that evaluates to 8, and 8 * 2 is another expression that evaluates to 16. The final result is assigned to the variable x.
+
+### Why Are Operators and Expressions Important?
+
+1. **Mathematical Calculations**: Operators help you perform mathematical operations, such as addition, subtraction, multiplication, and division. They allow you to manipulate numerical data in your programs.
+
+2. **Making Decisions**: Logical and relational operators are used to compare values and make decisions in your program. For example, you can check if a condition is true or false, which helps control the flow of your program (e.g., using `if` statements).
+
+3. **Efficient Code**: Understanding how operators and expressions work allows you to write more efficient, readable, and concise code. With the right operators and well-formed expressions, you can avoid redundancy and make your code easier to understand and maintain.
+
+---
+
+### Real-Life Example of Operators and Expressions:
+
+Let’s say you're creating a simple program to check if someone qualifies for a discount at a store based on their age and the total amount of their purchase.
+
+```java
+int age = 25;
+double purchaseAmount = 150.0;
+
+boolean qualifiesForDiscount = (age >= 18) && (purchaseAmount > 100);
+System.out.println("Qualifies for discount: " + qualifiesForDiscount);
+```
+### Real-Life Example of Operators and Expressions:
+
+Let’s say you're creating a simple program to check if someone qualifies for a discount at a store based on their age and the total amount of their purchase.
+
+```java
+int age = 25;
+double purchaseAmount = 150.0;
+
+boolean qualifiesForDiscount = (age >= 18) && (purchaseAmount > 100);
+System.out.println("Qualifies for discount: " + qualifiesForDiscount);
+```
