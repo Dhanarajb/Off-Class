@@ -447,15 +447,44 @@ In the context of the program: The statement `System.out.println("Hello, World!"
 - `System.out.println("Hello, World!");`: This prints `"Hello, World!"` to the console.
 
 ----
-
-
 # Understanding Data Types in Java
+# What is a Variable?
 
-### What are Data Types?
+A **variable** is like a box or container where you store data. Every variable has:
 
-In programming, **data types** are used to specify the kind of data that a variable can store. Think of them as labels that tell the computer what kind of information a variable holds, like a number, a character, or a true/false value.
+1. **A name** – so you can refer to it later.
+2. **A data type** – which defines what kind of data it will hold (like numbers, text, etc.).
+3. **A value** – the actual data inside the variable.
 
-For example, when you declare a variable in Java, you also have to tell it what kind of value it should hold. The data type is like the "category" of data for that variable.
+### Example:
+
+```java
+int age = 25;
+```
+- ```age``` is the variable name.
+- ```int``` is the data type (which tells Java that age will store a whole number).
+- ```25``` is the value stored in the variable.
+
+# Why Do We Need Data Types?
+
+**Data types** tell Java what kind of data you are working with and help the program know how to process that data. Without data types, Java wouldn't know how to treat the information.
+
+### Examples:
+- You **can’t store text** in a number variable.
+- You **can’t perform mathematical operations** on text without converting it to a number first.
+
+### Without data types:
+
+```java
+int age = "twenty";  // Error: You can't store text in an integer variable
+```
+```java
+int age = 25;         // Correct: age is an integer
+String name = "John"; // Correct: name is a string
+
+```
+
+
 
 ---
 
