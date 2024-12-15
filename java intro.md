@@ -220,6 +220,41 @@ This entire process is what makes Java platform-independent. The "write once, ru
 <img width="167" alt="Screenshot 2024-12-14 at 12 43 18 PM" src="https://github.com/user-attachments/assets/8fa77e2e-e047-41f0-b1c5-9f5aa62fc75b" />
 
 ---
+# Step-by-Step Java Installation
+
+## Step 1: Download JDK
+1. Open your browser and go to the official [Oracle Java Downloads page](https://www.oracle.com/java/technologies/javase-downloads.html).
+2. Select the appropriate JDK version for your operating system (Windows, macOS, or Linux).
+3. Click on the download link and accept the license agreement.
+
+## Step 2: Install JDK
+1. Locate the downloaded JDK installer file on your system (e.g., `jdk-x.x.x-windows-x64.exe` for Windows).
+2. Double-click the installer to start the installation process.
+3. Follow the on-screen instructions:
+   - Click **Next**.
+   - Choose the installation directory (default is usually fine, but you can change it if needed).
+   - Click **Install** to complete the process.
+
+## Step 3: Configure Environment Variables (Windows Only)
+1. Open the Start menu, search for **Environment Variables**, and click on **Edit the system environment variables**.
+2. In the **System Properties** window, click on **Environment Variables**.
+3. Under **System Variables**, find `Path`, and click **Edit**.
+4. Add the path to the `bin` directory of your JDK installation (e.g., `C:\Program Files\Java\jdk-x.x.x\bin`).
+5. Click **OK** to save the changes.
+
+## Step 4: Verify Installation
+1. Open the terminal (Command Prompt on Windows or Terminal on macOS/Linux).
+2. Type the command:
+   ```bash
+   java -version
+   ```
+   This should display the installed Java version.
+3. Type the command:
+   ```bash
+   javac -version
+   ```
+   This should display the version of the Java compiler.
+
 ------
 # Understanding JVM, JDK, and JRE
 
