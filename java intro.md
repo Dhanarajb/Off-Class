@@ -829,14 +829,7 @@ double purchaseAmount = 150.0;
 boolean qualifiesForDiscount = (age >= 18) && (purchaseAmount > 100);
 System.out.println("Qualifies for discount: " + qualifiesForDiscount);
 ```
-### Real-Life Example of Operators and Expressions:
 
-Let’s say you're creating a simple program to check if someone qualifies for a discount at a store based on their age and the total amount of their purchase.
-
-```java
-int age = 25;
-double purchaseAmount = 150.0;
-
-boolean qualifiesForDiscount = (age >= 18) && (purchaseAmount > 100);
-System.out.println("Qualifies for discount: " + qualifiesForDiscount);
-```
+- The relational operator >= checks if the age is 18 or older.
+- The relational operator > checks if the purchase amount is greater than 100.
+- The logical operator && ensures that both conditions must be true for the discount to apply
