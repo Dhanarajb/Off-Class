@@ -833,3 +833,505 @@ System.out.println("Qualifies for discount: " + qualifiesForDiscount);
 - The relational operator >= checks if the age is 18 or older.
 - The relational operator > checks if the purchase amount is greater than 100.
 - The logical operator && ensures that both conditions must be true for the discount to apply
+
+--------
+
+# Control Statements (if, switch, loops) in Java
+
+## 1. `if` Statement
+The `if` statement is used to execute a block of code only if a specified condition is `true`. If the condition is `false`, the code inside the `if` block is skipped.
+
+### Syntax:
+```java
+if (condition) {
+  // code to execute if condition is true
+}
+```
+
+### Scenario:
+A student needs to check whether they have passed or failed based on their marks.
+
+### Examples:
+
+1. **Check if a student passes**
+   ```java
+   int marks = 80;
+   if (marks >= 50) {
+     System.out.println("Student has passed.");
+   }
+   ```
+
+2. **Check if a number is positive**
+   ```java
+   int number = 5;
+   if (number > 0) {
+     System.out.println("The number is positive.");
+   }
+   ```
+
+3. **Check if a number is even**
+   ```java
+   int num = 4;
+   if (num % 2 == 0) {
+     System.out.println("The number is even.");
+   }
+   ```
+
+4. **Check age for voting eligibility**
+   ```java
+   int age = 18;
+   if (age >= 18) {
+     System.out.println("Eligible to vote.");
+   }
+   ```
+
+5. **Check if a temperature is below freezing**
+   ```java
+   int temperature = -5;
+   if (temperature < 0) {
+     System.out.println("The weather is freezing.");
+   }
+   ```
+
+## 2. `else` Statement
+The `else` statement runs a block of code if the condition in the `if` statement is `false`.
+
+### Syntax:
+```java
+if (condition) {
+  // code if condition is true
+} else {
+  // code if condition is false
+}
+```
+
+### Scenario:
+A student is checking if they can enter a contest based on their age.
+
+### Examples:
+
+1. **Check if a student passes or fails**
+   ```java
+   int marks = 40;
+   if (marks >= 50) {
+     System.out.println("Student has passed.");
+   } else {
+     System.out.println("Student has failed.");
+   }
+   ```
+
+2. **Check if a number is positive or negative**
+   ```java
+   int number = -3;
+   if (number > 0) {
+     System.out.println("The number is positive.");
+   } else {
+     System.out.println("The number is negative.");
+   }
+   ```
+
+3. **Check if it's daytime or nighttime**
+   ```java
+   int time = 10;  // 10 AM
+   if (time < 12) {
+     System.out.println("Good Morning!");
+   } else {
+     System.out.println("Good Evening!");
+   }
+   ```
+
+4. **Check if a person is eligible for a discount**
+   ```java
+   int age = 15;
+   if (age >= 18) {
+     System.out.println("Eligible for a discount.");
+   } else {
+     System.out.println("Not eligible for a discount.");
+   }
+   ```
+
+5. **Check if it's freezing or not**
+   ```java
+   int temperature = 10;
+   if (temperature < 0) {
+     System.out.println("It's freezing.");
+   } else {
+     System.out.println("It's not freezing.");
+   }
+   ```
+
+## 3. `else if` Statement
+The `else if` statement allows you to check multiple conditions. It’s used when you need to test more than one condition in a sequence.
+
+### Syntax:
+```java
+if (condition1) {
+  // code if condition1 is true
+} else if (condition2) {
+  // code if condition2 is true
+} else {
+  // code if none of the conditions are true
+}
+```
+
+### Scenario:
+A person is checking if a number is positive, negative, or zero.
+
+### Examples:
+
+1. **Check if a number is positive, negative, or zero**
+   ```java
+   int number = 0;
+   if (number > 0) {
+     System.out.println("The number is positive.");
+   } else if (number < 0) {
+     System.out.println("The number is negative.");
+   } else {
+     System.out.println("The number is zero.");
+   }
+   ```
+
+2. **Check if a student is grade A, B, or C**
+   ```java
+   int marks = 75;
+   if (marks >= 85) {
+     System.out.println("Grade A");
+   } else if (marks >= 65) {
+     System.out.println("Grade B");
+   } else {
+     System.out.println("Grade C");
+   }
+   ```
+
+3. **Check if it's morning, afternoon, or night**
+   ```java
+   int hour = 14; // 2 PM
+   if (hour < 12) {
+     System.out.println("Good morning!");
+   } else if (hour < 18) {
+     System.out.println("Good afternoon!");
+   } else {
+     System.out.println("Good evening!");
+   }
+   ```
+
+4. **Check if it's a weekend or weekday**
+   ```java
+   String day = "Monday";
+   if (day.equals("Saturday") || day.equals("Sunday")) {
+     System.out.println("It's a weekend.");
+   } else {
+     System.out.println("It's a weekday.");
+   }
+   ```
+
+5. **Check age group**
+   ```java
+   int age = 25;
+   if (age < 13) {
+     System.out.println("Child");
+   } else if (age < 20) {
+     System.out.println("Teenager");
+   } else {
+     System.out.println("Adult");
+   }
+   ```
+
+## 4. `switch` Statement
+The `switch` statement is used to evaluate a single expression and match it against multiple cases. It is often more readable than multiple `if`/`else if` statements when there are many conditions.
+
+### Syntax:
+```java
+switch (expression) {
+  case value1:
+    // code to run if expression matches value1
+    break;
+  case value2:
+    // code to run if expression matches value2
+    break;
+  default:
+    // code to run if no cases match
+}
+```
+
+### Scenario:
+A person is checking the day of the week to print a message.
+
+### Examples:
+
+1. **Check day of the week**
+   ```java
+   String day = "Monday";
+   switch (day) {
+     case "Monday":
+       System.out.println("Start of the week!");
+       break;
+     case "Friday":
+       System.out.println("Weekend is near!");
+       break;
+     default:
+       System.out.println("Midweek!");
+   }
+   ```
+
+2. **Check vehicle type**
+   ```java
+   String vehicle = "car";
+   switch (vehicle) {
+     case "car":
+       System.out.println("Four wheels");
+       break;
+     case "bike":
+       System.out.println("Two wheels");
+       break;
+     default:
+       System.out.println("Unknown vehicle");
+   }
+   ```
+
+3. **Check grade**
+   ```java
+   String grade = "A";
+   switch (grade) {
+     case "A":
+       System.out.println("Excellent!");
+       break;
+     case "B":
+       System.out.println("Good!");
+       break;
+     case "C":
+       System.out.println("Fair");
+       break;
+     default:
+       System.out.println("Failed");
+   }
+   ```
+
+4. **Check fruit color**
+   ```java
+   String fruit = "apple";
+   switch (fruit) {
+     case "apple":
+       System.out.println("Red or green");
+       break;
+     case "banana":
+       System.out.println("Yellow");
+       break;
+     default:
+       System.out.println("Unknown fruit");
+   }
+   ```
+
+5. **Check month**
+   ```java
+   String month = "April";
+   switch (month) {
+     case "December":
+     case "January":
+     case "February":
+       System.out.println("Winter");
+       break;
+     case "March":
+     case "April":
+     case "May":
+       System.out.println("Spring");
+       break;
+     default:
+       System.out.println("Summer or Fall");
+   }
+   ```
+
+## 5. Loops
+Loops allow you to run a block of code multiple times.
+
+### Types of Loops:
+- **`for` Loop**
+- **`while` Loop**
+- **`do...while` Loop**
+
+### **`for` Loop**
+The `for` loop repeats a block of code for a specific number of times.
+
+### Syntax:
+```java
+for (int i = 0; i < 5; i++) {
+  // code to execute
+}
+```
+
+### Scenario:
+A teacher is printing numbers from 1 to 5.
+
+### Examples:
+
+1. **Print numbers from 1 to 5**
+   ```java
+   for (int i = 1; i <= 5; i++) {
+     System.out.println(i);
+   }
+   ```
+
+2. **Print even numbers from 0 to 10**
+   ```java
+   for (int i = 0; i <= 10; i += 2) {
+     System.out.println(i);
+   }
+   ```
+
+3. **Print multiplication table of 5**
+   ```java
+   for (int i = 1; i <= 10; i++) {
+     System.out.println(5 * i);
+   }
+   ```
+
+4. **Sum of numbers from 1 to 5**
+   ```java
+   int sum = 0;
+   for (int i = 1; i <= 5; i++) {
+     sum += i;
+   }
+   System.out.println(sum);
+   ```
+
+5. **Print characters in a string**
+   ```java
+   String name = "John";
+   for (int i = 0; i < name.length(); i++) {
+     System.out.println(name.charAt(i));
+   }
+   ```
+
+### **`while` Loop**
+The `while` loop repeats a block of code as long as the specified condition is true.
+
+### Syntax:
+```java
+while (condition) {
+  // code to execute as long as condition is true
+}
+```
+
+### Scenario:
+A person needs to print numbers from 1 to 5 using a `while` loop.
+
+### Examples:
+
+1. **Print numbers from 1 to 5**
+   ```java
+   int i = 1;
+   while (i <= 5) {
+     System.out.println(i);
+     i++;
+   }
+   ```
+
+2. **Print even numbers from 0 to 10**
+   ```java
+   int i = 0;
+   while (i <= 10) {
+     System.out.println(i);
+     i += 2;
+   }
+   ```
+
+3. **Print multiplication table of 7**
+   ```java
+   int i = 1;
+   while (i <= 10) {
+     System.out.println(7 * i);
+     i++;
+   }
+   ```
+
+4. **Sum of numbers from 1 to 5**
+   ```java
+   int sum = 0;
+   int i = 1;
+   while (i <= 5) {
+     sum += i;
+     i++;
+   }
+   System.out.println(sum);
+   ```
+
+5. **Print characters in a string using `while` loop**
+   ```java
+   String name = "Alice";
+   int i = 0;
+   while (i < name.length()) {
+     System.out.println(name.charAt(i));
+     i++;
+   }
+   ```
+
+### **`do...while` Loop**
+The `do...while` loop executes a block of code at least once, and then repeats the execution as long as the condition is true.
+
+### Syntax:
+```java
+do {
+  // code to execute
+} while (condition);
+```
+
+### Scenario:
+A student is trying to print numbers from 1 to 5 using a `do...while` loop.
+
+### Examples:
+
+1. **Print numbers from 1 to 5**
+   ```java
+   int i = 1;
+   do {
+     System.out.println(i);
+     i++;
+   } while (i <= 5);
+   ```
+
+2. **Print even numbers from 0 to 10**
+   ```java
+   int i = 0;
+   do {
+     System.out.println(i);
+     i += 2;
+   } while (i <= 10);
+   ```
+
+3. **Print multiplication table of 3**
+   ```java
+   int i = 1;
+   do {
+     System.out.println(3 * i);
+     i++;
+   } while (i <= 10);
+   ```
+
+4. **Sum of numbers from 1 to 5**
+   ```java
+   int sum = 0;
+   int i = 1;
+   do {
+     sum += i;
+     i++;
+   } while (i <= 5);
+   System.out.println(sum);
+   ```
+
+5. **Print characters in a string using `do...while` loop**
+   ```java
+   String name = "Bob";
+   int i = 0;
+   do {
+     System.out.println(name.charAt(i));
+     i++;
+   } while (i < name.length());
+   ```
+
+## Conclusion
+Control statements (if, switch, loops) are fundamental in Java to control the flow of execution based on conditions or repeated actions. Understanding when and how to use them is crucial for writing efficient and readable code.
+
+### Practice Exercise
+1. Create a program that checks if a number is positive, negative, or zero.
+2. Write a program using `switch` to print the name of a month based on its number (1-12).
+3. Implement a program using loops that prints all prime numbers between 1 and 100.
