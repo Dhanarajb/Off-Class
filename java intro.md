@@ -1145,20 +1145,21 @@ A person is checking the day of the week to print a message.
 Loops allow you to run a block of code multiple times.
 # Creating the content of the file
 loop_explanation_content = """
-### Loops in Java: Detailed Explanation for Students
 
-#### **What is a Loop?**
+# Loops in Java: Detailed Explanation for Students
+
+## What is a Loop?
 A **loop** is a way to make the computer repeat a set of instructions. For example, if you want to print "Hello!" 5 times, instead of writing it 5 times in the code, you can use a loop to do it for you.
 It saves time and makes your code shorter and smarter.
 
-#### **Types of Loops in Java**
+## Types of Loops in Java
 1. **`for` loop**: Use this when you know how many times the loop should run.
 2. **`while` loop**: Use this when you don’t know how many times it will run, but you know the condition it should stop at.
 3. **`do-while` loop**: Like `while`, but this one will always run at least once before checking the condition.
 
 ---
 
-### **How a Loop Works**
+## How a Loop Works
 
 Think of a loop like a washing machine:
 1. You start the machine (initialization).
@@ -1166,6 +1167,96 @@ Think of a loop like a washing machine:
 3. If dirty, it washes (executes the code).
 4. After washing, it checks again (updates).
 5. It keeps repeating until the clothes are clean (condition is false).
+
+---
+
+## 1. `for` Loop
+The `for` loop is used when you know in advance how many times you want to repeat something.
+
+### Syntax:
+```java
+for (initialization; condition; update) {
+    // Code to execute
+}
+```
+
+### How it Works (Simple Explanation):
+1. **Initialization**: Start with a variable, like `int i = 0`. It tells the loop where to begin.
+2. **Condition**: This decides how long the loop will run. For example, `i < 5` means, "Keep running while `i` is less than 5."
+3. **Update**: After each round, update the variable. For example, `i++` adds 1 to `i`.
+
+---
+
+### Example:
+Let’s print numbers from 1 to 5 using a `for` loop:
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+### What Happens in This Code:
+- **Step 1**: Start with `i = 1`.
+- **Step 2**: Check the condition: Is `i <= 5`? (Yes, so run the code.)
+- **Step 3**: Print `i` (1).
+- **Step 4**: Add 1 to `i` (now `i = 2`) and repeat steps 2–4 until `i > 5`.
+
+### Output:
+```
+1
+2
+3
+4
+5
+```
+
+---
+
+## Differences Between Loops
+
+| Feature        | `for` Loop               | `while` Loop          | `do-while` Loop         |
+|----------------|--------------------------|------------------------|-------------------------|
+| Use Case       | When you know how many times it should run. | When you don’t know how many times it will run. | When you want it to run at least once. |
+| Condition Check | Before running the block. | Before running the block. | After running the block. |
+| Runs at Least Once? | No                       | No                     | Yes                     |
+
+---
+
+## Key Points to Remember
+1. **Infinite Loops**: If the condition never becomes false, the loop will run forever. For example:
+   ```java
+   while (true) {
+       System.out.println("This never stops!");
+   }
+   ```
+   Use **`break`** to stop an infinite loop when needed.
+
+2. **Skipping Iterations (`continue`)**: Use `continue` to skip the rest of the code in the current iteration and move to the next one.
+   ```java
+   for (int i = 1; i <= 5; i++) {
+       if (i == 3) continue;
+       System.out.println(i);
+   }
+   // Output: 1 2 4 5
+   ```
+
+3. **Exiting Loops (`break`)**: Use `break` to stop the loop immediately.
+   ```java
+   for (int i = 1; i <= 5; i++) {
+       if (i == 3) break;
+       System.out.println(i);
+   }
+   // Output: 1 2
+   ```
+
+---
+
+## Real-Life Analogy
+Imagine you’re climbing stairs:
+- **`for` loop**: You know there are 10 stairs, so you take 10 steps and stop.
+- **`while` loop**: You don’t know how many stairs there are, so you keep going until you see no more stairs.
+- **`do-while` loop**: You take one step first, then check if there are more stairs.
 
 ---
 
