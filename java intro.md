@@ -1212,6 +1212,74 @@ for (int i = 1; i <= 5; i++) {
 ```
 
 ---
+# `while` and `do-while` Loops in Java
+
+In Java, both `while` and `do-while` loops are used for repeating a block of code multiple times, but they have key differences in how they check the condition and when the loop executes.
+
+---
+
+### 1. `while` Loop
+
+The **`while` loop** repeatedly executes a block of code as long as a given condition is true. It checks the condition **before** running the loop's body, so if the condition is false initially, the code inside the loop will **never execute**.
+
+#### Syntax:
+
+```java
+while (condition) {
+    // Code to execute
+}
+```
+- condition: An expression that evaluates to true or false. If true, the loop executes; if false, the loop stops.
+- The loop continues executing as long as the condition remains true.
+
+```
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;  // Increment the counter
+}
+```
+- What Happens in This Code:
+- Step 1: Start with i = 1.
+- Step 2: Check the condition i <= 5. Since it's true, enter the loop.
+- Step 3: Print i (1).
+- Step 4: Increment i (now i = 2).
+- Step 5: Check the condition again. If it's true, repeat steps 3–5. If it's false, exit the loop.
+
+- Key Point:
+Condition checked before execution: If the condition is false initially, the loop does not run at all.
+----
+## 3. `do-while` Loop
+
+The `do-while` loop is similar to the `while` loop, but with one important difference: it checks the condition **after** executing the loop's body. This means the block of code inside the loop will always run at least once, even if the condition is false initially.
+
+### Syntax:
+
+```java
+do {
+    // Code to execute
+} while (condition);
+```
+- condition: Like in the while loop, this determines whether the loop will continue running. However, it's checked after the loop body executes, so the loop will run at least once regardless of the condition.
+
+```
+int i = 1;
+do {
+    System.out.println(i);
+    i++;  // Increment the counter
+} while (i <= 5);
+
+````
+**What Happens in This Code:**
+- Step 1: Start with i = 1.
+- Step 2: The block of code inside the loop is executed once, printing i (1).
+- Step 3: Increment i (now i = 2).
+- Step 4: Check the condition i <= 5. Since it's true, repeat the loop.
+- Step 5: After the condition is checked, if it's still true, the loop continues.
+
+- Key Point:
+Condition checked after execution: The loop runs at least once, even if the condition is false initially.
+----
 
 ## Differences Between Loops
 
