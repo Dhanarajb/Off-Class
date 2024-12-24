@@ -1529,3 +1529,296 @@ Control statements (if, switch, loops) are fundamental in Java to control the fl
 1. Create a program that checks if a number is positive, negative, or zero.
 2. Write a program using `switch` to print the name of a month based on its number (1-12).
 3. Implement a program using loops that prints all prime numbers between 1 and 100.
+
+
+
+-----
+
+
+
+# Object-Oriented Programming (OOP) in Java
+
+Object-Oriented Programming (OOP) is a paradigm that organizes code around objects and their interactions. It emphasizes four key principles:
+
+---
+
+## 1. **Encapsulation**
+
+### Definition:
+Encapsulation is the process of bundling data (variables) and methods (functions) that operate on the data into a single unit, usually a class. It hides the internal implementation details and exposes only what is necessary.
+
+### Real-World Example:
+A **bank account** allows users to deposit or withdraw money but restricts direct access to the account balance.
+
+### Benefits:
+- Protects the internal state of an object.
+- Provides controlled access to data.
+- Enhances security and maintainability.
+
+### Code Example:
+```java
+class BankAccount {
+    private double balance; // Encapsulated variable
+
+    // Constructor to initialize balance
+    public BankAccount(double initialBalance) {
+        if (initialBalance >= 0) {
+            this.balance = initialBalance;
+        } else {
+            System.out.println("Initial balance cannot be negative!");
+            this.balance = 0;
+        }
+    }
+
+    // Public method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Deposit amount must be positive!");
+        }
+    }
+
+    // Public method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: " + amount);
+        } else {
+            System.out.println("Insufficient funds or invalid amount!");
+        }
+    }
+
+    // Public getter method to view balance
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        account.deposit(500);
+        account.withdraw(300);
+        System.out.println("Balance: " + account.getBalance());
+    }
+}
+```
+
+### Output:
+```
+Deposited: 500
+Withdrew: 300
+Balance: 1200
+```
+
+---
+
+## 2. **Inheritance**
+
+### Definition:
+Inheritance allows one class (child) to acquire the properties and methods of another class (parent). This promotes **code reuse** and hierarchy.
+
+### Real-World Example:
+A **Car** class has general properties like speed, color, and methods like drive. A **SportsCar** inherits from the Car class and adds unique features like turbo mode.
+
+### Benefits:
+- Reduces code duplication.
+- Simplifies extension and maintenance.
+- Promotes hierarchical design.
+
+### Code Example:
+```java
+// Parent class
+class Car {
+    private String brand;
+    private int speed;
+
+    public Car(String brand, int speed) {
+        this.brand = brand;
+        this.speed = speed;
+    }
+
+    public void drive() {
+        System.out.println(brand + " is driving at " + speed + " km/h.");
+    }
+}
+
+// Child class
+class SportsCar extends Car {
+    private boolean turboEnabled;
+
+    public SportsCar(String brand, int speed) {
+        super(brand, speed); // Call parent class constructor
+        this.turboEnabled = false;
+    }
+
+    public void enableTurbo() {
+        this.turboEnabled = true;
+        System.out.println("Turbo mode activated!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SportsCar myCar = new SportsCar("Ferrari", 200);
+        myCar.drive();       // Inherited method
+        myCar.enableTurbo(); // Specific to SportsCar
+    }
+}
+```
+
+### Output:
+```
+Ferrari is driving at 200 km/h.
+Turbo mode activated!
+```
+
+---
+
+## 3. **Polymorphism**
+
+### Definition:
+Polymorphism means "many forms." It allows a single method, object, or interface to behave differently based on the context.
+
+### Real-World Example:
+A **remote control** can control different devices (TV, AC, etc.), but the behavior of the buttons changes depending on the device.
+
+### Types:
+1. **Compile-Time Polymorphism (Method Overloading)**: Multiple methods with the same name but different parameters.
+2. **Run-Time Polymorphism (Method Overriding)**: A method in a child class overrides a method in the parent class.
+
+### Code Examples:
+#### Compile-Time Polymorphism:
+```java
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Integer Sum: " + calc.add(5, 10));
+        System.out.println("Double Sum: " + calc.add(5.5, 10.5));
+    }
+}
+```
+
+#### Run-Time Polymorphism:
+```java
+class Animal {
+    public void sound() {
+        System.out.println("Animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Cat meows.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal;
+
+        myAnimal = new Dog(); // Polymorphism
+        myAnimal.sound();
+
+        myAnimal = new Cat(); // Polymorphism
+        myAnimal.sound();
+    }
+}
+```
+
+### Output:
+```
+Dog barks.
+Cat meows.
+```
+
+---
+
+## 4. **Abstraction**
+
+### Definition:
+Abstraction hides the implementation details of a system and only shows the essential features to the user. It can be achieved using **abstract classes** or **interfaces**.
+
+### Real-World Example:
+When you drive a car, you don’t worry about how the engine works. You only use the steering, accelerator, and brake.
+
+### Benefits:
+- Simplifies the system for the user.
+- Promotes focus on what an object **does** rather than how it **works**.
+
+### Code Example:
+#### Using Abstract Classes:
+```java
+abstract class Shape {
+    abstract void draw(); // Abstract method
+
+    public void info() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Circle...");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Rectangle...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape;
+
+        shape = new Circle();
+        shape.draw();
+
+        shape = new Rectangle();
+        shape.draw();
+    }
+}
+```
+
+### Output:
+```
+Drawing a Circle...
+Drawing a Rectangle...
+```
+
+---
+
+## Summary:
+
+| **Principle**   | **Key Feature**                   | **Real-World Example**                | **Code Example**                       |
+|------------------|-----------------------------------|---------------------------------------|----------------------------------------|
+| Encapsulation    | Data hiding                      | Bank Account                          | Getter and Setter methods              |
+| Inheritance      | Code reuse                       | Car → SportsCar                       | `extends` keyword                      |
+| Polymorphism     | Many forms (Overloading/Overriding) | Remote control for devices            | Overloading/Overriding methods         |
+| Abstraction      | Hide details, show functionality | Driving a car (steering, brake)       | Abstract classes and methods           |
+
+These examples should give you a comprehensive understanding of OOP principles in Java!
