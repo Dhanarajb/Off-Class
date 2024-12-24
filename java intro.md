@@ -1530,6 +1530,231 @@ Control statements (if, switch, loops) are fundamental in Java to control the fl
 2. Write a program using `switch` to print the name of a month based on its number (1-12).
 3. Implement a program using loops that prints all prime numbers between 1 and 100.
 
+----
+
+# Methods (Functions) in Java
+
+A **method** in Java is a block of code that performs a specific task. It is one of the most fundamental concepts in programming and helps organize your code into reusable pieces.
+
+---
+
+## Why Use Methods?
+- **Reusability**: Write once, use many times.
+- **Modularity**: Break the program into smaller, manageable parts.
+- **Readability**: Makes the code easier to read and understand.
+- **Maintainability**: Easier to debug and modify the code.
+
+---
+
+## Method Structure
+A method in Java consists of:
+1. **Access Modifier**: Defines the visibility of the method (e.g., `public`, `private`).
+2. **Return Type**: Specifies the type of value the method returns (e.g., `int`, `void`).
+3. **Method Name**: Describes what the method does (e.g., `calculateSum`).
+4. **Parameters**: Inputs the method can take, written inside parentheses.
+5. **Method Body**: The code that defines what the method does, enclosed in `{}`.
+
+### Syntax:
+```java
+accessModifier returnType methodName(parameters) {
+    // Method body (code to execute)
+    return value; // Optional, depending on return type
+}
+```
+
+---
+
+## Simple Example
+Let’s start with a simple example:
+
+### Code:
+```java
+class HelloWorld {
+    // Method to print a message
+    public void printMessage() {
+        System.out.println("Hello, World!");
+    }
+
+    public static void main(String[] args) {
+        HelloWorld hw = new HelloWorld(); // Create an object
+        hw.printMessage(); // Call the method
+    }
+}
+```
+
+### Output:
+```
+Hello, World!
+```
+
+---
+
+## Types of Methods
+
+### 1. **Void Methods**
+Void methods perform an action but do not return any value.
+
+#### Example:
+```java
+class Greeting {
+    public void sayHello() {
+        System.out.println("Hello!");
+    }
+
+    public static void main(String[] args) {
+        Greeting g = new Greeting();
+        g.sayHello();
+    }
+}
+```
+
+#### Output:
+```
+Hello!
+```
+
+### 2. **Methods with Return Values**
+These methods perform a task and return a value to the caller.
+
+#### Example:
+```java
+class Calculator {
+    public int add(int a, int b) {
+        return a + b; // Return the sum
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        int result = calc.add(5, 10); // Store the returned value
+        System.out.println("Sum: " + result);
+    }
+}
+```
+
+#### Output:
+```
+Sum: 15
+```
+
+### 3. **Parameterized Methods**
+These methods accept inputs (parameters) and use them to perform their tasks.
+
+#### Example:
+```java
+class Greetings {
+    public void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public static void main(String[] args) {
+        Greetings g = new Greetings();
+        g.greet("Alice");
+        g.greet("Bob");
+    }
+}
+```
+
+#### Output:
+```
+Hello, Alice!
+Hello, Bob!
+```
+
+---
+
+## Key Concepts
+
+### 1. **Method Overloading**
+Having multiple methods with the same name but different parameters.
+
+#### Example:
+```java
+class MathOperations {
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        System.out.println(math.multiply(5, 10));       // Calls the int version
+        System.out.println(math.multiply(5.5, 10.5));   // Calls the double version
+    }
+}
+```
+
+#### Output:
+```
+50
+57.75
+```
+
+### 2. **Static Methods**
+Static methods belong to the class rather than an instance of the class. They can be called without creating an object.
+
+#### Example:
+```java
+class Utility {
+    public static int square(int number) {
+        return number * number;
+    }
+
+    public static void main(String[] args) {
+        int result = Utility.square(4); // No need to create an object
+        System.out.println("Square: " + result);
+    }
+}
+```
+
+#### Output:
+```
+Square: 16
+```
+
+### 3. **Method Scope**
+Variables declared inside a method are local to that method and cannot be accessed outside of it.
+
+#### Example:
+```java
+class ScopeExample {
+    public void showScope() {
+        int localVariable = 10; // Local variable
+        System.out.println("Local variable: " + localVariable);
+    }
+
+    public static void main(String[] args) {
+        ScopeExample scope = new ScopeExample();
+        scope.showScope();
+        // System.out.println(localVariable); // Error: Cannot access localVariable here
+    }
+}
+```
+
+---
+
+## Best Practices for Methods
+1. **Use meaningful names**: Names should describe what the method does (e.g., `calculateSum`).
+2. **Keep methods short**: A method should perform one task.
+3. **Document methods**: Use comments or JavaDoc to explain what the method does.
+4. **Avoid too many parameters**: If a method requires too many inputs, consider breaking it into smaller methods.
+
+---
+
+## Summary Table
+
+| **Feature**            | **Description**                                                  |
+|-------------------------|------------------------------------------------------------------|
+| Void Methods            | Perform tasks without returning a value.                        |
+| Methods with Return     | Perform tasks and return a value.                               |
+| Parameterized Methods   | Accept inputs to perform specific tasks.                        |
+| Method Overloading      | Multiple methods with the same name but different parameters.   |
+| Static Methods          | Belong to the class, can be called without creating an object.  |
+| Method Scope            | Variables inside a method are not accessible outside it.        |
+
+This content provides a beginner-friendly explanation of methods in Java. Let me know if you need additional details or exercises!
 
 
 -----
