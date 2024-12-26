@@ -2161,151 +2161,151 @@ These examples should give you a comprehensive understanding of OOP principles i
 
 
 ---------
-
 # Java Collections Framework: Lists, Sets, and Maps
 
-The Java Collections Framework (JCF) is a set of classes and interfaces that make it easier to work with collections of objects like lists, sets, and maps. These collections help in storing, organizing, and manipulating data efficiently. Let's explore each of these in simple terms with scenarios and examples.
+## Why Use Collections in Java?
+Imagine you are organizing a library with hundreds of books. You want to:
+- Keep track of all the books.
+- Avoid duplicate entries for the same book.
+- Quickly find a book by its title or ISBN.
+
+Handling such tasks using arrays can be tedious and inefficient. The Java Collections Framework provides **Lists**, **Sets**, and **Maps**, which make handling such data much easier, efficient, and flexible.
 
 ---
 
-## 1. Lists
-### What is a List?
-A `List` is an ordered collection of elements where duplicates are allowed. Elements are indexed, starting from `0`. This means you can access elements by their position in the list.
+## **1. Lists**
+A **List** is an ordered collection of elements. It allows duplicate entries and maintains the order in which elements are inserted.
 
-### Example Scenario:
-Imagine you are managing a to-do list. You want to add tasks, check tasks at specific positions, and allow duplicate tasks (like "Buy groceries" twice).
+### **Scenario**
+You want to store the names of students in the order they registered for a course.
 
-### Code Example:
+### **Key Features**
+- **Duplicates Allowed:** You can add the same name twice.
+- **Indexed Access:** Each student has an index (position).
+
+### **Example**
 ```java
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListExample {
     public static void main(String[] args) {
-        // Create a list to store tasks
-        ArrayList<String> todoList = new ArrayList<>();
+        List<String> students = new ArrayList<>();
 
-        // Add tasks to the list
-        todoList.add("Buy groceries");
-        todoList.add("Clean the house");
-        todoList.add("Buy groceries"); // Duplicate task
+        // Adding students
+        students.add("Alice");
+        students.add("Bob");
+        students.add("Alice");
 
-        // Print the list
-        System.out.println("To-Do List: " + todoList);
+        // Printing students
+        System.out.println("Registered Students: " + students);
 
-        // Access an element by index
-        System.out.println("First Task: " + todoList.get(0));
-
-        // Remove a task
-        todoList.remove("Clean the house");
-
-        // Print the updated list
-        System.out.println("Updated To-Do List: " + todoList);
+        // Accessing by index
+        System.out.println("First student: " + students.get(0));
     }
 }
 ```
 
-### Dry Run:
-1. Add "Buy groceries" to the list.
-2. Add "Clean the house" to the list.
-3. Add another "Buy groceries".
-4. Print the list: `To-Do List: [Buy groceries, Clean the house, Buy groceries]`
-5. Access the first task: `First Task: Buy groceries`
-6. Remove "Clean the house".
-7. Print the updated list: `Updated To-Do List: [Buy groceries, Buy groceries]`
+### **Dry Run**
+| Operation               | List Content        |
+|-------------------------|---------------------|
+| `students.add("Alice")` | ["Alice"]           |
+| `students.add("Bob")`   | ["Alice", "Bob"]    |
+| `students.add("Alice")` | ["Alice", "Bob", "Alice"] |
+| `students.get(0)`       | Outputs: "Alice"    |
 
 ---
 
-## 2. Sets
-### What is a Set?
-A `Set` is a collection that does not allow duplicate elements. The order of elements is not guaranteed.
+## **2. Sets**
+A **Set** is a collection that does not allow duplicate elements. It is useful when you want to ensure unique entries.
 
-### Example Scenario:
-You are managing a guest list for a party. You want to ensure no guest is added twice.
+### **Scenario**
+You are managing an online voting system where each voter can vote only once.
 
-### Code Example:
+### **Key Features**
+- **No Duplicates:** Ensures that each voter can vote only once.
+- **Unordered:** Does not maintain the insertion order.
+
+### **Example**
 ```java
 import java.util.HashSet;
+import java.util.Set;
 
 public class SetExample {
     public static void main(String[] args) {
-        // Create a set to store guest names
-        HashSet<String> guestList = new HashSet<>();
+        Set<String> voters = new HashSet<>();
 
-        // Add guests to the list
-        guestList.add("Alice");
-        guestList.add("Bob");
-        guestList.add("Alice"); // Duplicate guest
+        // Adding voters
+        voters.add("Alice");
+        voters.add("Bob");
+        voters.add("Alice");
 
-        // Print the guest list
-        System.out.println("Guest List: " + guestList);
-
-        // Check if a guest is on the list
-        System.out.println("Is Bob invited? " + guestList.contains("Bob"));
+        // Printing voters
+        System.out.println("Unique Voters: " + voters);
     }
 }
 ```
 
-### Dry Run:
-1. Add "Alice" to the set.
-2. Add "Bob" to the set.
-3. Try adding "Alice" again (ignored because sets do not allow duplicates).
-4. Print the set: `Guest List: [Alice, Bob]` (order may vary).
-5. Check if "Bob" is invited: `Is Bob invited? true`
+### **Dry Run**
+| Operation               | Set Content         |
+|-------------------------|---------------------|
+| `voters.add("Alice")`   | ["Alice"]           |
+| `voters.add("Bob")`     | ["Alice", "Bob"]    |
+| `voters.add("Alice")`   | ["Alice", "Bob"]    |
 
 ---
 
-## 3. Maps
-### What is a Map?
-A `Map` is a collection of key-value pairs. Each key is unique, but values can be duplicated.
+## **3. Maps**
+A **Map** is a collection that stores data in key-value pairs. Each key is unique, and a key maps to a single value.
 
-### Example Scenario:
-Imagine you are building a phonebook where you store names (keys) and their phone numbers (values).
+### **Scenario**
+You want to store and retrieve the phone numbers of people using their names as identifiers.
 
-### Code Example:
+### **Key Features**
+- **Key-Value Pair:** Each key maps to one value.
+- **No Duplicate Keys:** Each key must be unique.
+
+### **Example**
 ```java
 import java.util.HashMap;
+import java.util.Map;
 
 public class MapExample {
     public static void main(String[] args) {
-        // Create a map to store phonebook entries
-        HashMap<String, String> phoneBook = new HashMap<>();
+        Map<String, String> phoneBook = new HashMap<>();
 
-        // Add entries to the phonebook
+        // Adding entries
         phoneBook.put("Alice", "123-456-7890");
         phoneBook.put("Bob", "987-654-3210");
-        phoneBook.put("Alice", "111-222-3333"); // Updates Alice's number
+        phoneBook.put("Alice", "111-222-3333");
 
-        // Print the phonebook
-        System.out.println("Phonebook: " + phoneBook);
+        // Printing phone book
+        System.out.println("Phone Book: " + phoneBook);
 
-        // Get Bob's number
-        System.out.println("Bob's Number: " + phoneBook.get("Bob"));
-
-        // Remove an entry
-        phoneBook.remove("Alice");
-
-        // Print the updated phonebook
-        System.out.println("Updated Phonebook: " + phoneBook);
+        // Accessing by key
+        System.out.println("Alice's Phone: " + phoneBook.get("Alice"));
     }
 }
 ```
 
-### Dry Run:
-1. Add "Alice" with number "123-456-7890".
-2. Add "Bob" with number "987-654-3210".
-3. Add "Alice" again with "111-222-3333" (updates Alice's number).
-4. Print the map: `Phonebook: {Alice=111-222-3333, Bob=987-654-3210}`.
-5. Get Bob's number: `Bob's Number: 987-654-3210`.
-6. Remove "Alice" from the phonebook.
-7. Print the updated map: `Updated Phonebook: {Bob=987-654-3210}`.
+### **Dry Run**
+| Operation                      | Map Content                             |
+|--------------------------------|-----------------------------------------|
+| `phoneBook.put("Alice", "123-456-7890")` | {"Alice"="123-456-7890"}          |
+| `phoneBook.put("Bob", "987-654-3210")`   | {"Alice"="123-456-7890", "Bob"="987-654-3210"} |
+| `phoneBook.put("Alice", "111-222-3333")` | {"Alice"="111-222-3333", "Bob"="987-654-3210"} |
+| `phoneBook.get("Alice")`                | Outputs: "111-222-3333"           |
 
 ---
 
-## Summary
-- **List:** Ordered collection, allows duplicates. Example: To-do list.
-- **Set:** Unordered collection, no duplicates. Example: Guest list.
-- **Map:** Key-value pairs, unique keys. Example: Phonebook.
+## Summary Table
+| Feature               | List                   | Set                    | Map                          |
+|-----------------------|------------------------|------------------------|------------------------------|
+| Duplicates Allowed    | Yes                    | No                     | Keys: No, Values: Yes        |
+| Maintains Order       | Yes                    | No                     | No                          |
+| Access by Index/Key   | By Index               | Not Applicable         | By Key                      |
 
-Understanding these collections will help you manage data efficiently in your Java programs.
+---
 
------
+With these collections, Java makes it easier to manage data efficiently for various scenarios. Experiment with these examples to solidify your understanding!
+
