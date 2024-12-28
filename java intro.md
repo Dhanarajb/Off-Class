@@ -2584,4 +2584,335 @@ public class MapExample {
 ---
 
 With these collections, Java makes it easier to manage data efficiently for various scenarios. Experiment with these examples to solidify your understanding!
+-----
+# Sorting and Searching in Java
 
+## Introduction
+Sorting and searching are fundamental operations in computer science that allow you to organize data and retrieve specific information efficiently. These operations are crucial for improving the performance of algorithms and ensuring that data is processed in a way that minimizes time and space complexity.
+
+- **Sorting**: Arranges elements in a particular order (e.g., ascending or descending).
+- **Searching**: Locates a specific element within a dataset.
+
+## What
+Sorting and searching are two of the most widely used algorithms in software development. Sorting organizes a collection of elements, and searching is the process of finding specific elements within that collection. 
+
+- **Sorting**: Can be done in ascending or descending order, and there are various sorting algorithms available, such as Bubble Sort, Merge Sort, Quick Sort, etc.
+- **Searching**: Involves finding an element in a dataset. Popular searching algorithms include Linear Search and Binary Search.
+
+## Why
+Sorting and searching are essential for:
+- **Efficiency**: Algorithms are often more efficient when the data is sorted. Searching in sorted data can be faster and less computationally expensive (e.g., Binary Search).
+- **Optimization**: Many algorithms require sorted data as input to work efficiently (e.g., for implementing range queries or finding the median).
+- **Problem Solving**: Many real-world problems require sorting or searching to solve them efficiently, such as searching for a specific record in a database or arranging elements in a specific order for a display or report.
+
+## Where
+Sorting and searching are commonly used in:
+- **Databases**: For organizing records and performing efficient searches.
+- **Web development**: Sorting user data or search results.
+- **Data analysis**: Sorting data for analysis or finding specific entries in large datasets.
+- **Algorithms and problem-solving**: In contests, interviews, and competitive programming challenges.
+
+## When
+You need to use sorting and searching when:
+- **Sorting**: When you need to organize a dataset in a specific order (e.g., sorting a list of employees by their salaries).
+- **Searching**: When you need to find an element in a dataset quickly (e.g., finding a specific product in an e-commerce platform).
+
+## How
+
+### Sorting in Java
+In Java, sorting can be achieved using:
+1. **Java Arrays.sort()**: The `Arrays.sort()` method provides a simple and fast way to sort arrays in Java.
+   ```java
+   int[] arr = {5, 2, 9, 1, 5, 6};
+   Arrays.sort(arr); // sorts the array in ascending order
+   ```
+2. **Collections.sort()**: If you have a list of objects, the Collections.sort() method can be used to sort them.
+```
+List<Integer> list = Arrays.asList(5, 2, 9, 1, 5, 6);
+Collections.sort(list); // sorts the list in ascending order
+```
+In this document, we will explore multiple sorting and searching algorithms in Java, including their scenarios, code, and dry runs.
+
+---
+
+## Sorting Algorithms
+
+### 1. Bubble Sort
+Bubble Sort is a simple algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process continues until the list is sorted.
+
+#### Scenario
+Imagine you have a list of students' scores and want to arrange them in ascending order to identify the lowest and highest scores.
+
+#### Java Code
+```java
+public class BubbleSort {
+    public static void bubbleSort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // Swap array[j] and array[j + 1]
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] scores = {45, 32, 88, 12, 67};
+
+        System.out.println("Original Scores:");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+
+        bubbleSort(scores);
+
+        System.out.println("\n\nSorted Scores:");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+    }
+}
+```
+
+#### Dry Run
+Let’s sort the array `[45, 32, 88, 12, 67]` using Bubble Sort:
+
+1. **Pass 1:**
+   - Compare 45 and 32 → Swap → `[32, 45, 88, 12, 67]`
+   - Compare 45 and 88 → No Swap
+   - Compare 88 and 12 → Swap → `[32, 45, 12, 88, 67]`
+   - Compare 88 and 67 → Swap → `[32, 45, 12, 67, 88]`
+
+2. **Pass 2:**
+   - Compare 32 and 45 → No Swap
+   - Compare 45 and 12 → Swap → `[32, 12, 45, 67, 88]`
+   - Compare 45 and 67 → No Swap
+
+3. **Pass 3:**
+   - Compare 32 and 12 → Swap → `[12, 32, 45, 67, 88]`
+   - Compare 32 and 45 → No Swap
+
+4. **Pass 4:**
+   - Compare 12 and 32 → No Swap
+
+Final sorted array: `[12, 32, 45, 67, 88]`
+
+---
+
+### 2. Selection Sort
+Selection Sort divides the array into two parts: the sorted part and the unsorted part. It repeatedly selects the smallest (or largest) element from the unsorted part and moves it to the sorted part.
+
+#### Java Code
+```java
+public class SelectionSort {
+    public static void selectionSort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // Swap array[i] and array[minIndex]
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] scores = {45, 32, 88, 12, 67};
+
+        System.out.println("Original Scores:");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+
+        selectionSort(scores);
+
+        System.out.println("\n\nSorted Scores:");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+    }
+}
+```
+
+#### Dry Run
+Let’s sort the array `[45, 32, 88, 12, 67]` using Selection Sort:
+
+1. **Pass 1:**
+   - Find the smallest element (12) and swap it with the first element → `[12, 32, 88, 45, 67]`
+
+2. **Pass 2:**
+   - Find the smallest element (32) in the remaining array and swap → `[12, 32, 88, 45, 67]`
+
+3. **Pass 3:**
+   - Find the smallest element (45) in the remaining array and swap → `[12, 32, 45, 88, 67]`
+
+4. **Pass 4:**
+   - Find the smallest element (67) in the remaining array and swap → `[12, 32, 45, 67, 88]`
+
+Final sorted array: `[12, 32, 45, 67, 88]`
+
+---
+
+### 3. Insertion Sort
+Insertion Sort builds the sorted array one element at a time by repeatedly picking an element and inserting it into its correct position.
+
+#### Java Code
+```java
+public class InsertionSort {
+    public static void insertionSort(int[] array) {
+        int n = array.length;
+        for (int i = 1; i < n; i++) {
+            int key = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] scores = {45, 32, 88, 12, 67};
+
+        System.out.println("Original Scores:");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+
+        insertionSort(scores);
+
+        System.out.println("\n\nSorted Scores:");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+    }
+}
+```
+
+#### Dry Run
+Let’s sort the array `[45, 32, 88, 12, 67]` using Insertion Sort:
+
+1. **Pass 1:**
+   - Insert 32 into its correct position → `[32, 45, 88, 12, 67]`
+
+2. **Pass 2:**
+   - Insert 88 into its correct position → `[32, 45, 88, 12, 67]`
+
+3. **Pass 3:**
+   - Insert 12 into its correct position → `[12, 32, 45, 88, 67]`
+
+4. **Pass 4:**
+   - Insert 67 into its correct position → `[12, 32, 45, 67, 88]`
+
+Final sorted array: `[12, 32, 45, 67, 88]`
+
+---
+
+## Searching Algorithms
+
+### 1. Linear Search
+Linear Search sequentially checks each element of the array until the target element is found.
+
+#### Java Code
+```java
+public class LinearSearch {
+    public static int linearSearch(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] scores = {12, 32, 45, 67, 88};
+        int target = 45;
+
+        int index = linearSearch(scores, target);
+
+        if (index != -1) {
+            System.out.println("Score " + target + " found at index: " + index);
+        } else {
+            System.out.println("Score " + target + " not found.");
+        }
+    }
+}
+```
+
+#### Dry Run
+Let’s search for `45` in `[12, 32, 45, 67, 88]`:
+
+1. Compare 12 with 45 → Not Found
+2. Compare 32 with 45 → Not Found
+3. Compare 45 with 45 → Found at Index 2
+
+---
+
+### 2. Binary Search
+Binary Search is an efficient algorithm to find an element in a sorted array. It repeatedly divides the search interval in half.
+
+#### Java Code
+```java
+public class BinarySearch {
+    public static int binarySearch(int[] array, int target) {
+        int low = 0, high = array.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (array[mid] == target) {
+                return mid; // Target found
+            }
+
+            if (array[mid] < target) {
+                low = mid + 1; // Search the right half
+            } else {
+                high = mid - 1; // Search the left half
+            }
+        }
+
+        return -1; // Target not found
+    }
+
+    public static void main(String[] args) {
+        int[] scores = {12, 32, 45, 67, 88};
+        int target = 45;
+
+        int index = binarySearch(scores, target);
+
+        if (index != -1) {
+            System.out.println("Score " + target + " found at index: " + index);
+        } else {
+            System.out.println("Score " + target + " not found.");
+        }
+    }
+}
+```
+
+#### Dry Run
+Let’s search for `45` in `[12, 32, 45, 67, 88]`:
+
+1. **Step 1:**
+   - Low = 0, High = 4, Mid = (0 + 4) / 2 = 2
+   - Array[Mid] = 45 → Target Found at Index 2
+
+---
+
+## Conclusion
+- **Sorting Algorithms:** Bubble Sort, Selection Sort, and Insertion Sort are basic techniques to organize data.
+- **Searching Algorithms:** Linear Search and Binary Search are useful to locate data efficiently.
+
+By mastering these techniques, you can solve many practical problems in computer science and programming.
+----
