@@ -2818,6 +2818,211 @@ Let’s sort the array `[45, 32, 88, 12, 67]` using Insertion Sort:
 Final sorted array: `[12, 32, 45, 67, 88]`
 
 ---
+# Sorting Algorithms: Merge Sort, Quick Sort, and Built-in Sorting
+
+## 1. Merge Sort
+
+Merge Sort is a divide-and-conquer algorithm that divides the array into halves, recursively sorts them, and then merges the sorted halves.
+
+### **Algorithm Steps**
+1. Divide the array into two halves.
+2. Recursively sort each half.
+3. Merge the two sorted halves back into a single sorted array.
+
+### **Time Complexity**
+- Best Case: O(n log n)
+- Worst Case: O(n log n)
+- Average Case: O(n log n)
+
+### **Code Example**
+```java
+public class MergeSort {
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+
+            // Recursively divide the array
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+
+            // Merge the sorted halves
+            merge(arr, left, mid, right);
+        }
+    }
+
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        System.arraycopy(arr, left, L, 0, n1);
+        System.arraycopy(arr, mid + 1, R, 0, n2);
+
+        int i = 0, j = 0, k = left;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+        mergeSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+### **Dry Run**
+Input: `[12, 11, 13, 5, 6, 7]`
+
+1. Split into `[12, 11, 13]` and `[5, 6, 7]`.
+2. Further split into `[12]`, `[11, 13]`, `[5]`, and `[6, 7]`.
+3. Sort and merge: `[11, 12, 13]` and `[5, 6, 7]`.
+4. Final merge: `[5, 6, 7, 11, 12, 13]`.
+
+---
+
+## 2. Quick Sort
+
+Quick Sort is a divide-and-conquer algorithm that selects a "pivot" element and partitions the array around the pivot, ensuring elements smaller than the pivot are on the left and larger elements are on the right.
+
+### **Algorithm Steps**
+1. Select a pivot element.
+2. Partition the array such that elements smaller than the pivot go to the left, and elements greater than the pivot go to the right.
+3. Recursively apply the process to the left and right subarrays.
+
+### **Time Complexity**
+- Best Case: O(n log n)
+- Worst Case: O(n²) (when the pivot is the smallest or largest element)
+- Average Case: O(n log n)
+
+### **Code Example**
+```java
+public class QuickSort {
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1);
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+
+                // Swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // Swap arr[i+1] and pivot
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 7, 8, 9, 1, 5};
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+### **Dry Run**
+Input: `[10, 7, 8, 9, 1, 5]`
+
+1. Select pivot = 5. Partition: `[1] | 5 | [10, 7, 8, 9]`.
+2. Recur on `[1]` (already sorted).
+3. Pivot = 9 in `[10, 7, 8, 9]`. Partition: `[7, 8] | 9 | [10]`.
+4. Final sorted array: `[1, 5, 7, 8, 9, 10]`.
+
+---
+
+## 3. Built-in Sorting
+
+Java provides built-in methods for sorting arrays and collections using `Arrays.sort()` and `Collections.sort()`.
+
+### **Advantages**
+- Highly optimized and efficient.
+- Supports primitive types (`int`, `double`, etc.) and objects (`String`, custom objects).
+
+### **Code Example**
+```java
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class BuiltInSort {
+    public static void main(String[] args) {
+        // Sorting an array
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        Arrays.sort(arr);
+
+        System.out.println("Sorted array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+
+        // Sorting a collection
+        List<Integer> list = Arrays.asList(64, 34, 25, 12, 22, 11, 90);
+        Collections.sort(list);
+
+        System.out.println("\nSorted list: ");
+        for (int num : list) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+### **Dry Run**
+Input: `[64, 34, 25, 12, 22, 11, 90]`
+
+1. Call `Arrays.sort()`.
+2. Array after sorting: `[11, 12, 22, 25, 34, 64, 90]`.
+3. Call `Collections.sort()` on list: `[11, 12, 22, 25, 34, 64, 90]`.
+
+---
+
+----
 
 ## Searching Algorithms
 
