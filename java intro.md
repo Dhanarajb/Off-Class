@@ -3850,8 +3850,8 @@ This program efficiently captures and logs user activity in a text file, allowin
                 e.printStackTrace();
             }
         }
-    }
-}
+      }
+     }
 
      ```
      ### Explanation:
