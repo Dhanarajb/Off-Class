@@ -3388,32 +3388,41 @@ The basic workflow of working with files can be divided into **three main steps*
    _Example_:  
    ```java
    import java.io.File;
-   import java.io.FileReader;
+    import java.io.FileReader;
+    import java.io.BufferedReader;
    import java.io.IOException;
 
-   public class Main {
+   class Main {
     public static void main(String[] args) {
-        File file = new File("example.txt");  // Create a File object for the specified file
-        FileReader fileReader = null;
-        
+        File file = new File("example.txt"); // Ensure this file exists in your working directory
+        BufferedReader bufferedReader = null;
+
         try {
-            fileReader = new FileReader(file);  // Open the file using FileReader for reading
-            // You can now use fileReader to read data from the file
-            
+            // Open the file with BufferedReader for efficient reading
+            bufferedReader = new BufferedReader(new FileReader(file));
+            String line;
+
+            // Read and print each line from the file
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
         } catch (IOException e) {
-            e.printStackTrace();  // Handle potential I/O exceptions such as file not found
+            // Handle exception if file not found or cannot be read
+            System.err.println("An error occurred: " + e.getMessage());
+            e.printStackTrace();
         } finally {
-            // Ensure that the file is closed after reading
             try {
-                if (fileReader != null) {
-                    fileReader.close();
+                // Close the reader to release resources
+                if (bufferedReader != null) {
+                    bufferedReader.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();  // Handle potential exception while closing the file
+                System.err.println("Failed to close reader: " + e.getMessage());
             }
         }
     }
-    }
+     }
+
 
    ```
    ### Explanation and Elaboration:
