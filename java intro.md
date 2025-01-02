@@ -3604,6 +3604,115 @@ When opening a file, you specify a **mode** to tell the program how to interact 
 
 ---
 
+# Understanding the Scanner Class in Java
+
+The **Scanner** class in Java is like a tool that helps you take input from the user. It’s useful when your program needs to interact with people by asking questions or getting information, like numbers, words, or entire sentences.
+
+## How to Use the Scanner Class
+
+### Step 1: Import the Scanner Class
+Before using the Scanner, you need to import it at the top of your program:
+```java
+import java.util.Scanner;
+```
+
+### Step 2: Create a Scanner Object
+To start using the Scanner, you need to create an object:
+```java
+Scanner scanner = new Scanner(System.in);
+```
+Here, `System.in` tells the Scanner to read input from the keyboard.
+
+### Step 3: Read Input
+The Scanner can read different types of data using specific methods:
+
+- **String (sentence or word):**
+  - `nextLine()` – Reads a full line of text.
+  - `next()` – Reads a single word.
+
+- **Numbers:**
+  - `nextInt()` – Reads an integer.
+  - `nextDouble()` – Reads a decimal number.
+  - `nextFloat()` – Reads a floating-point number.
+  - `nextLong()` – Reads a long integer.
+
+- **Boolean:**
+  - `nextBoolean()` – Reads `true` or `false` values.
+
+### Example Code
+Here’s a complete example to demonstrate different data types:
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a Scanner object
+        Scanner scanner = new Scanner(System.in);
+
+        // Reading a string
+        System.out.println("What is your name?");
+        String name = scanner.nextLine();
+
+        // Reading an integer
+        System.out.println("How old are you?");
+        int age = scanner.nextInt();
+
+        // Reading a decimal number
+        System.out.println("What is your height in meters?");
+        double height = scanner.nextDouble();
+
+        // Reading a boolean
+        System.out.println("Do you like programming? (true/false)");
+        boolean likesProgramming = scanner.nextBoolean();
+
+        // Display the user's input
+        System.out.println("\nSummary of Input:");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Height: " + height + " meters");
+        System.out.println("Likes Programming: " + likesProgramming);
+
+        // Close the Scanner
+        scanner.close();
+    }
+}
+```
+
+### Output Example
+When you run the program, it might look like this:
+```
+What is your name?
+John
+How old are you?
+25
+What is your height in meters?
+1.75
+Do you like programming? (true/false)
+true
+
+Summary of Input:
+Name: John
+Age: 25
+Height: 1.75 meters
+Likes Programming: true
+```
+
+### Important Notes
+1. **Always Close the Scanner:**
+   - Use `scanner.close()` when you're done to free up resources.
+
+2. **Beware of Mixing `nextLine()` and Other Methods:**
+   - If you use `nextInt()` or similar methods before `nextLine()`, you might need to clear the input buffer with an extra `scanner.nextLine()`.
+
+### Fun Analogy
+Think of the Scanner as a **conversation partner**. You ask questions, and it patiently waits for the user to answer before moving to the next step.
+
+---
+
+With the Scanner class, your programs can become interactive and dynamic, making them more fun to use!
+
+----
+
 ## Scenarios and Examples
 
 ### Scenario 1: Writing a Simple Diary
