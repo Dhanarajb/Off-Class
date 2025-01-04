@@ -3,8 +3,28 @@
 ## What is HTML?
 HTML stands for **HyperText Markup Language**. It is the standard language used to create and design web pages. Think of HTML as the structure or skeleton of a webpage, defining elements like headings, paragraphs, links, images, and more.
 
-- **HyperText** refers to text that contains links to other texts or resources.
-- **Markup Language** means that HTML uses "tags" to mark up different parts of content on a webpage.
+### Breaking Down the Words:
+
+#### **HyperText**
+- "Hyper" means "beyond" or "extended." In the context of HTML, it refers to the ability to go beyond static text by linking to other resources, such as webpages, documents, videos, or images.
+- "Text" refers to the content that is readable by humans and displayed on the webpage. HyperText allows users to navigate between related pieces of information through links.
+- Example: When you click on a hyperlink in a webpage, it takes you to another location (e.g., another webpage or a specific section).
+
+#### **Markup**
+- "Markup" refers to the system of annotating text so that it can be distinguished and processed by a computer. In HTML, this is done using "tags."
+- Tags are special keywords enclosed in angle brackets (`< >`) that define the type of content or its purpose.
+- Example: The `<p>` tag is used to mark a paragraph, and the `<a>` tag is used for hyperlinks.
+
+#### **Language**
+- "Language" implies that HTML follows a set of rules and syntax that computers can understand.
+- It provides a standardized way to create and structure web content, making it consistent and accessible across different devices and browsers.
+- Example: The consistent use of `<h1>` for main headings ensures that browsers render it in a specific way, such as larger and bold text.
+
+### Why Combine These Words?
+When combined, **HyperText Markup Language** (HTML) represents a tool that:
+1. Links content together (HyperText).
+2. Uses tags to structure and label content (Markup).
+3. Follows specific rules to ensure that content is displayed consistently (Language).
 
 ---
 
