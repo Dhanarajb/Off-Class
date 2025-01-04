@@ -218,3 +218,95 @@ Example:
 ## Conclusion
 HTML is the backbone of web development. Once you understand its structure and elements, you can create simple webpages and then enhance them with CSS and JavaScript for styling and interactivity. Keep practicing to master HTML!
 
+
+
+# HTML Roadmap for Freshers
+
+## 1. Introduction to HTML
+   - **What is HTML?**: Understand the basics of HyperText Markup Language.
+   - **Why HTML is Important**: Learn how HTML structures content on webpages.
+   - **HTML Structure**: Understand the basic structure of an HTML document.
+     ```html
+     <!DOCTYPE html>
+     <html>
+       <head>
+       </head>
+       <body>
+       </body>
+     </html>
+     ```
+
+## 2. Basic HTML Tags
+   - Learn common tags and their usage:
+     - **Headings**: `<h1>`, `<h2>`, ..., `<h6>`
+     - **Paragraphs**: `<p>`
+     - **Links**: `<a>`
+     - **Images**: `<img>`
+     - **Lists**:
+       - Ordered: `<ol>`, `<li>`
+       - Unordered: `<ul>`, `<li>`
+     - **Tables**: `<table>`, `<tr>`, `<th>`, `<td>`
+     - **Forms**: `<form>`, `<input>`, `<textarea>`, `<button>`
+   
+## 3. HTML Attributes
+   - Understand how to use attributes within tags:
+     - `id`, `class`, `href`, `src`, `alt`, `title`, etc.
+   - Learn how to link external resources like images, stylesheets, and scripts.
+
+## 4. HTML Formatting
+   - Learn how to format text:
+     - **Bold**: `<b>`, `<strong>`
+     - **Italics**: `<i>`, `<em>`
+     - **Underline**: `<u>`
+     - **Break line**: `<br>`
+     - **Horizontal line**: `<hr>`
+   
+## 5. HTML Semantic Tags
+   - Learn the importance of semantic HTML:
+     - `<header>`, `<footer>`, `<nav>`, `<article>`, `<section>`, `<aside>`
+   
+## 6. HTML Links and Navigation
+   - Learn how to create links to other webpages and resources:
+     - Internal Links: `<a href="page.html">`
+     - External Links: `<a href="https://www.example.com">`
+     - Anchors for navigation within the same page: `<a href="#section1">`
+
+## 7. HTML Forms
+   - Understand how to create forms to gather input from users:
+     - Text fields: `<input type="text">`
+     - Buttons: `<button>`
+     - Checkboxes and radio buttons: `<input type="checkbox">`, `<input type="radio">`
+     - Dropdown: `<select>`, `<option>`
+   
+## 8. HTML Multimedia
+   - Learn how to embed media in HTML:
+     - **Images**: `<img src="image.jpg" alt="description">`
+     - **Audio**: `<audio src="audio.mp3" controls>`
+     - **Video**: `<video src="video.mp4" controls>`
+   
+## 9. HTML Comments
+   - Understand how to add comments to your code:
+     ```html
+     <!-- This is a comment -->
+     ```
+
+## 10. HTML Best Practices
+   - Learn about writing clean, readable, and accessible code.
+   - Follow consistent naming conventions for classes and IDs.
+   - Use semantic tags to improve SEO and accessibility.
+
+## 11. HTML Validation
+   - Learn how to validate HTML to check for errors and ensure compliance with standards.
+   - Use tools like [W3C HTML Validator](https://validator.w3.org/).
+
+## 12. Responsive Web Design (Basic)
+   - Learn the basics of making HTML pages responsive:
+     - Use the `<meta name="viewport" content="width=device-width, initial-scale=1.0">` tag.
+     - Understand the importance of mobile-first design.
+
+## 13. Practice Projects
+   - Build small projects to practice:
+     - Create a personal webpage.
+     - Build a basic webpage with links, images, and lists.
+     - Create a form to collect user input.
+
