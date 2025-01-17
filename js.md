@@ -612,3 +612,205 @@ let count = 20; // Error: Cannot redeclare block-scoped variable 'count'
 
 Understanding the differences between `let`, `const`, and `var` is essential for writing clean, maintainable JavaScript code. By using `let` and `const` correctly, you can prevent common mistakes like accidental redeclarations and reassignments.
 ---
+---
+# 40-Minute Class on JavaScript Data Types, Operators, and I/O Functions
+
+## 1. Introduction
+Welcome to this 40-minute class on JavaScript basics! In this session, we will cover the following topics:
+
+- **Data Types:** String, Number, Boolean, Null, Undefined
+- **Operators:** Arithmetic, Comparison, Logical
+- **Input/Output Functions:** `prompt()`, `alert()`, `console.log()`
+
+By the end of this session, you'll have a solid understanding of these concepts, complete with examples, scenarios, and interview questions.
+
+---
+
+## 2. Data Types
+JavaScript has the following **primitive data types:**
+
+1. **String:** Used for textual data.
+2. **Number:** Represents both integers and floating-point numbers.
+3. **Boolean:** Represents `true` or `false`.
+4. **Null:** Represents an intentional absence of a value.
+5. **Undefined:** A variable that has been declared but not assigned a value.
+
+### Example Code:
+```javascript
+// String
+let name = "John";
+console.log(`Name: ${name}`); // Output: Name: John
+
+// Number
+let age = 25;
+console.log(`Age: ${age}`); // Output: Age: 25
+
+// Boolean
+let isStudent = true;
+console.log(`Is Student: ${isStudent}`); // Output: Is Student: true
+
+// Null
+let job = null;
+console.log(`Job: ${job}`); // Output: Job: null
+
+// Undefined
+let address;
+console.log(`Address: ${address}`); // Output: Address: undefined
+```
+
+### Scenarios and Explanation:
+- **String:** Names, messages, or any text (e.g., "Hello World").
+- **Number:** Calculations or counting (e.g., `age`, `price`).
+- **Boolean:** Decision-making (e.g., `isLoggedIn`).
+- **Null:** Placeholder for no value (e.g., `selectedProduct = null`).
+- **Undefined:** Default state for variables (e.g., `let score;`).
+
+---
+
+## 3. Operators
+JavaScript operators perform operations on values. We'll focus on:
+
+### 3.1 Arithmetic Operators
+- `+` (Addition)
+- `-` (Subtraction)
+- `*` (Multiplication)
+
+#### Example Code:
+```javascript
+let x = 10, y = 5;
+console.log(x + y); // 15
+console.log(x - y); // 5
+console.log(x * y); // 50
+```
+
+### 3.2 Comparison Operators
+- `===` (Strict equality)
+- `!==` (Strict inequality)
+
+#### Example Code:
+```javascript
+let a = 10, b = "10";
+console.log(a === b); // false (different types)
+console.log(a !== b); // true (different types)
+```
+
+### 3.3 Logical Operators
+- `&&` (AND)
+- `||` (OR)
+
+#### Example Code:
+```javascript
+let loggedIn = true, hasPermission = false;
+console.log(loggedIn && hasPermission); // false
+console.log(loggedIn || hasPermission); // true
+```
+
+---
+
+## 4. Input/Output Functions
+JavaScript provides basic functions for user interaction:
+
+### 4.1 `prompt()`
+Prompts the user to input data.
+
+```javascript
+let userName = prompt("Enter your name:");
+console.log(`Hello, ${userName}!`);
+```
+
+### 4.2 `alert()`
+Displays a message to the user.
+
+```javascript
+alert("Welcome to the JavaScript class!");
+```
+
+### 4.3 `console.log()`
+Logs data to the browser console (developer tool).
+
+```javascript
+console.log("Debugging made easy with console.log!");
+```
+
+---
+
+## 5. Examples
+
+### Example 1: Arithmetic Operations
+```javascript
+let price = 100;
+let discount = 20;
+let finalPrice = price - discount;
+console.log(`Final Price: ${finalPrice}`);
+```
+
+### Example 2: Combining Strings
+```javascript
+let firstName = "Jane";
+let lastName = "Doe";
+console.log(`Full Name: ${firstName} ${lastName}`);
+```
+
+### Example 3: Logical Decisions
+```javascript
+let isAdult = true;
+let hasID = false;
+if (isAdult && hasID) {
+  console.log("Access granted");
+} else {
+  console.log("Access denied");
+}
+```
+
+### Example 4: Using `prompt()`
+```javascript
+let age = prompt("Enter your age:");
+if (age >= 18) {
+  alert("You are eligible to vote.");
+} else {
+  alert("You are not eligible to vote.");
+}
+```
+
+### Example 5: `undefined` and `null`
+```javascript
+let value;
+console.log(value); // undefined
+value = null;
+console.log(value); // null
+```
+
+---
+
+## 6. Interview Questions
+
+1. **What is the difference between `undefined` and `null`?**
+2. **What is the output of the following code?**
+   ```javascript
+   console.log(10 + "5");
+   ```
+3. **Explain the difference between `==` and `===`.**
+4. **What will this code output? Why?**
+   ```javascript
+   let a = 0, b = false;
+   console.log(a == b);
+   console.log(a === b);
+   ```
+5. **How does `prompt()` differ from `console.log()`?**
+
+---
+
+## 7. Summary
+
+- **Data Types:** String, Number, Boolean, Null, Undefined
+- **Operators:** Arithmetic, Comparison, Logical
+- **Input/Output:** `prompt()`, `alert()`, `console.log()`
+- Practice with real-world scenarios and examples to deepen understanding.
+
+---
+
+## 8. Homework
+
+1. Write a program that calculates the area of a rectangle using user input.
+2. Create a decision-making program using `prompt()` and logical operators.
+3. Explore more about `typeof` operator to identify data types.
