@@ -814,3 +814,214 @@ console.log(value); // null
 1. Write a program that calculates the area of a rectangle using user input.
 2. Create a decision-making program using `prompt()` and logical operators.
 3. Explore more about `typeof` operator to identify data types.
+----
+# JavaScript Conditional Statements and Loops
+
+## 1. Introduction
+This lesson will cover:
+
+- **Conditional Statements:**
+  - `if`
+  - `if-else`
+  - `else if`
+  - `switch-case`
+- **Loops:**
+  - `for`
+  - `while`
+  - `do-while`
+- **Loop Control Statements:**
+  - `break`
+  - `continue`
+
+With examples, explanations, and practice questions, you'll gain a clear understanding of these fundamental concepts.
+
+---
+
+## 2. Conditional Statements
+Conditional statements execute code based on conditions.
+
+### 2.1 `if` Statement
+Executes a block of code if a condition evaluates to `true`.
+
+```javascript
+let age = 20;
+if (age >= 18) {
+  console.log("You are eligible to vote.");
+}
+```
+
+### 2.2 `if-else` Statement
+Executes one block of code if the condition is `true`, another if it is `false`.
+
+```javascript
+let age = 16;
+if (age >= 18) {
+  console.log("You are eligible to vote.");
+} else {
+  console.log("You are not eligible to vote.");
+}
+```
+
+### 2.3 `else if` Statement
+Tests multiple conditions sequentially.
+
+```javascript
+let score = 85;
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 75) {
+  console.log("Grade: B");
+} else {
+  console.log("Grade: C");
+}
+```
+
+### 2.4 `switch-case` Statement
+Tests a variable against multiple cases.
+
+```javascript
+let day = 3;
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+}
+```
+
+---
+
+## 3. Loops
+Loops repeat a block of code based on conditions.
+
+### 3.1 `for` Loop
+Used when the number of iterations is known.
+
+```javascript
+for (let i = 1; i <= 5; i++) {
+  console.log(`Iteration: ${i}`);
+}
+```
+
+### 3.2 `while` Loop
+Used when the condition is checked before executing the loop body.
+
+```javascript
+let count = 1;
+while (count <= 5) {
+  console.log(`Count: ${count}`);
+  count++;
+}
+```
+
+### 3.3 `do-while` Loop
+Executes the loop body at least once, then checks the condition.
+
+```javascript
+let num = 1;
+do {
+  console.log(`Number: ${num}`);
+  num++;
+} while (num <= 5);
+```
+
+---
+
+## 4. Loop Control Statements
+
+### 4.1 `break`
+Exits the loop immediately.
+
+```javascript
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    break;
+  }
+  console.log(`Iteration: ${i}`);
+}
+// Output: 1, 2
+```
+
+### 4.2 `continue`
+Skips the current iteration and moves to the next.
+
+```javascript
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue;
+  }
+  console.log(`Iteration: ${i}`);
+}
+// Output: 1, 2, 4, 5
+```
+
+---
+
+## 5. Examples
+
+### Example 1: Determine Pass/Fail
+```javascript
+let marks = 40;
+if (marks >= 50) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}
+```
+
+### Example 2: Factorial Calculation
+```javascript
+let num = 5;
+let factorial = 1;
+for (let i = 1; i <= num; i++) {
+  factorial *= i;
+}
+console.log(`Factorial of ${num} is ${factorial}`);
+```
+
+### Example 3: Sum of Odd Numbers
+```javascript
+let sum = 0;
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  sum += i;
+}
+console.log(`Sum of odd numbers: ${sum}`);
+```
+
+---
+
+## 6. Interview Questions
+
+1. **What is the difference between `break` and `continue`?**
+2. **How does a `while` loop differ from a `do-while` loop?**
+3. **What happens if you omit the `break` statement in a `switch-case`?**
+4. **Write a program to calculate the sum of numbers divisible by 3 from 1 to 50.**
+5. **Can a `for` loop work without an initialization or increment? If yes, provide an example.**
+
+---
+
+## 7. Summary
+
+- **Conditional Statements** allow branching logic.
+- **Loops** are used to repeat tasks efficiently.
+- **Loop Control Statements** manage loop execution.
+- Practice using real-world scenarios to master these concepts.
+
+---
+
+## 8. Homework
+
+1. Write a program to print the multiplication table of a number entered by the user.
+2. Create a program to find the largest number in an array using a loop.
+3. Write a program that prints all prime numbers between 1 and 50.
+
