@@ -409,5 +409,69 @@ Use MongoDB **when your data structure keeps changing** or is **not the same for
 4. Use this in MongoDB Compass or your backend project
 
 ---
+# 📌 Section 2: Basic Terminology – SQL vs MongoDB
+
+## ✅ Overview
+
+This section helps you understand the basic terminology differences between SQL (Relational Databases) and MongoDB (NoSQL Document Databases), with simple English explanations and a real-life scenario.
+
+---
+
+## 🧩 Terminology Mapping
+
+| SQL Terminology | MongoDB Terminology | Meaning in Simple English |
+|-----------------|---------------------|----------------------------|
+| Database        | Database            | A container for storing all your tables or collections. Like a storage unit for your app's data. |
+| Table           | Collection          | A group where similar data is stored. In SQL it’s a table, in MongoDB it’s a collection. |
+| Row             | Document            | One record or entry. In MongoDB, it's stored as a document. |
+| Column          | Field               | A property or attribute of the data. Example: name, email, city. |
+| Primary Key     | _id                 | A unique identifier for each record. SQL uses primary key, MongoDB uses _id. |
+
+---
+
+## 🌍 Real-Life Scenario: User Management System
+
+Imagine you're building a **User Management System** where you store user details like name, email, age, and city.
+
+- In **SQL**, you use a **table** called `Users`, where each **row** is a user and each **column** is a property like `name` or `age`.
+- In **MongoDB**, you use a **collection** called `Users`, and each **document** represents a user with key-value pairs (fields).
+
+Even though they sound different, both store and manage the same kind of information — just in different formats.
+
+---
+
+## 🧠 Real-World Mapping
+
+| Concept            | SQL                        | MongoDB                      | Think of it as                          |
+|--------------------|-----------------------------|-------------------------------|------------------------------------------|
+| Project/App         | `UserApp` Database         | `UserApp` Database           | One big storage unit for your app       |
+| User list           | `Users` Table              | `Users` Collection           | Group where similar data lives          |
+| One user record     | One Row                    | One Document                 | One person’s information                |
+| User attribute      | Column (e.g., name, email) | Field (e.g., name, email)    | One piece of information about a user   |
+| Unique identifier   | id (Primary Key)           | _id (auto-generated or manual) | Used to uniquely identify each user     |
+
+---
+
+## 🎯 Key Differences in Behavior
+
+- **SQL** is **strict** and uses a fixed structure — every row must have the same columns.
+- **MongoDB** is **flexible** — documents can have different fields even within the same collection.
+
+Example:
+- One user might have `name`, `email`, and `age`
+- Another might just have `name` and `email` — and that's totally okay in MongoDB.
+
+---
+
+## 🧾 Final Analogy
+
+| Concept               | SQL (Structured)                        | MongoDB (Flexible)                           |
+|------------------------|-----------------------------------------|----------------------------------------------|
+| Like a spreadsheet     | Fixed rows & columns (Excel-like)       | Loose documents in folders (Google Docs-like)|
+| Structure              | Predefined, strict schema               | Schema-less, flexible                        |
+| Use when               | Data is well-structured & relational    | Data is dynamic, nested, or varies often     |
+
+---
+
 
 
